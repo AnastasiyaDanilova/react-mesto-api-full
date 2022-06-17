@@ -91,7 +91,6 @@ deleteCard(id) {
 
 // проверка лайка, добавление и удаление
 changeLikeCardStatus(id, isLiked) {
-    console.log(isLiked)
     return fetch(`${this._url}/cards/${id}/likes`, {
         method: isLiked ? "PUT" : "DELETE",
         headers: this._headers
@@ -102,5 +101,5 @@ changeLikeCardStatus(id, isLiked) {
 }
 
 export const api = new Api({
-    baseUrl: 'http://localhost:3000'
+    baseUrl: 'https://api.mesto.nomoredomains.xyz'
 })

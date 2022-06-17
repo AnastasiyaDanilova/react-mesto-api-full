@@ -100,7 +100,12 @@ function App() {
                 }).catch((res) => console.log(res));
             return
         }
+        
     }, [loggedIn]);
+
+    React.useEffect(() => {
+        useCheckToken()
+    }, [])
 
     function handleUpdateUser(user) {
         api.editProfile(user.name, user.about).then((res) => {
@@ -190,6 +195,7 @@ function App() {
     };
 
     function handleLogOut() {
+
         localStorage.removeItem('token');
         setLoggedIn(false);
         console.log(loggedIn, localStorage)

@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.mesto.nomoredomains.xyz';
 
 // проверка ответа от сервера
 export const checkServerResponce = (res) => {
@@ -35,7 +35,6 @@ export const autorize = (email, password) => {
 }
 
 export const checkToken = (token) => {
-  console.log(token)
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
     headers: {
